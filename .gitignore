@@ -171,5 +171,7 @@ playground.ipynb
 
 # AOC Inputs
 **/*input.txt
+**/example*.txt
 
 testing.ipynb
+scratchpad.ipynb
