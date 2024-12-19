@@ -4,6 +4,9 @@ INPUT_PATH = "input.txt"
 EXAMPLE_INPUT_PATH = "example1.txt"
 
 
+from functools import cache
+
+
 with open(INPUT_PATH, "r") as f:
     while line := f.readline().strip():
         towels = [i.strip() for i in line.split(",")]
@@ -17,12 +20,13 @@ with open(INPUT_PATH, "r") as f:
     # print(designs)
 
 
-design_memo = {}
+# design_memo = {}
 
 
+@cache
 def check_if_design_possible(design: str):
-    if design in design_memo:
-        return design_memo[design]
+    # if design in design_memo:
+    #     return design_memo[design]
 
     # print(design)
     if design == "":
@@ -38,7 +42,7 @@ def check_if_design_possible(design: str):
                 design=design.removeprefix(towel)
             )
 
-    design_memo[design] = designs_possible
+    # design_memo[design] = designs_possible
     return designs_possible
 
 
